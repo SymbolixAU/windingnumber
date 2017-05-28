@@ -11,7 +11,6 @@ polyY = c(1.05, 1.05, -1.05, -1.05, 1.05)
 pointX = 51.6
 pointY = 0
 
-
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
 

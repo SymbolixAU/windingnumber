@@ -209,6 +209,15 @@ for(i in seq_along(testResults)){
 sum(testResults == 0)
 sum(diff(testResults) == 0) == (length(testResults) - 1)
 
+testResults <- numeric(1000)
+for(i in seq_along(testResults)){
+  testResults[i] <- spatial.data.table::WindingNumber(pointX, pointY, polyX, polyY)
+}
+
+## point is inside the polygon, so should all be non-zero
+sum(testResults == 0)
+sum(diff(testResults) == 0) == (length(testResults) - 1)
+
 
 ### ----------------------------------------------------------------------------
 
@@ -236,6 +245,15 @@ for(i in seq_along(testResults)){
   testResults[i] <- windingnumber::WindingNumber(pointX, pointY, polyX, polyY)
 }
 
+
+## the point is inside the polygon, so the winding number should be non-zero
+sum(testResults == 0)
+sum(diff(testResults) == 0) == (length(testResults) - 1)
+
+testResults <- numeric(1000)
+for(i in seq_along(testResults)){
+  testResults[i] <- spatial.data.table::WindingNumber(pointX, pointY, polyX, polyY)
+}
 
 ## the point is inside the polygon, so the winding number should be non-zero
 sum(testResults == 0)

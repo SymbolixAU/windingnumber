@@ -1,7 +1,3 @@
-library(googleway)
-mapKey <- read.dcf("~/Documents/.googleAPI", fields = "GOOGLE_MAP_KEY")
-
-### ----------------------------------------------------------------------------
 
 ## closed polygon, point inside
 polyX = c(51.5, 51.9, 51.9, 51.5, 51.5)
@@ -13,11 +9,6 @@ pointY = 0
 
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(10)
@@ -42,12 +33,6 @@ pointY = 0
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
 
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
-
-
 testResults <- numeric(1000)
 for(i in seq_along(testResults)){
   testResults[i] <- windingnumber::WindingNumber(pointX, pointY, polyX, polyY)
@@ -70,11 +55,6 @@ pointY = 0
 
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(20)
@@ -101,11 +81,6 @@ pointY = 0
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
 
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
-
 
 testResults <- numeric(20)
 for(i in seq_along(testResults)){
@@ -129,11 +104,6 @@ pointY = 0
 
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(20)
@@ -159,11 +129,6 @@ pointY = 0
 
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(20)
@@ -192,11 +157,6 @@ pointY = 0
 
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(1000)
@@ -232,11 +192,6 @@ pointY = 0
 df_poly <- data.frame(lat = polyX, lon = polyY, drag = TRUE)
 df_poly$info <- paste0(df_poly$lat, ",", df_poly$lon)
 df_point <- data.frame(lat = pointX, lon = pointY, colour = "green")
-
-google_map(key = mapKey) %>%
-  add_markers(data = df_poly, draggable = "drag", info_window = "info") %>%
-  add_polylines(data = df_poly, lat = "lat", lon = "lon") %>%
-  add_markers(data = df_point, colour = "colour")
 
 
 testResults <- numeric(1000)
